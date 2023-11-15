@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:shopping_list/screens/menu.dart';
 import 'package:shopping_list/screens/shoplist_form.dart';
+import 'package:shopping_list/screens/list_product.dart';
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -21,6 +22,7 @@ class ShopCard extends StatelessWidget {
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
 
           // Navigate ke route yang sesuai (tergantung jenis tombol)
+          
           if (item.name == "Tambah Produk") {
             Navigator.push(
               context,
@@ -28,6 +30,11 @@ class ShopCard extends StatelessWidget {
             );
             
           }
+          else if (item.name == "Lihat Produk") {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ProductPage()));
+          }
+
 
         },
 
